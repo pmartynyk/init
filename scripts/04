@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ -e /root/chan.md5 ]
+then
+    if ! md5sum -c /root/chan.md5
+    then
+	echo "File didn't match"
+    mail -s "Didn't match" root
+	md5sum /etc/crontab > /root/chan.md5
+    fi
+else
+    md5sum /etc/crontab > /root/chan.md5
+fi
+
+# crontab -e << 0 0 * * * root/changes
