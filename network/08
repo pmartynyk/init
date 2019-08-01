@@ -1,0 +1,10 @@
+nslookup slash16.org | grep "Address:" | awk '{print $2}'
+
+54.192.230.59
+54.192.230.162
+54.192.230.145
+54.192.230.31
+
+whois 54.192.230.59
+
+OrgName:        Amazon.com, Inc.
